@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ComplaintController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +18,54 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.login');
 });
+
+
+
+
+Route::get('/', function () {
+    return view('pages.login');
+});
+Route::get('/register', function () {
+    return view('pages.register');
+});
+
+// Route::middleware('checkSession')->group(function () {
+       
+// ComplaintController 
+Route::get('/add-complaint', [ComplaintController::class, 'add_complaint'])->name('add-complaint');
+Route::post('/save-complaint', [ComplaintController::class, 'create'])->name('save-complaint');
+// Route::get('/view-complaint', [ComplaintController::class, 'view_complaint'])->name('view-complaint');
+Route::get('/view-pia-complaint', [ComplaintController::class, 'view_pia'])->name('view-pia-complaint');
+Route::get('/view-breda-complaint', [ComplaintController::class, 'view_breda'])->name('view-breda-complaint');
+Route::get('/view-district-complaint', [ComplaintController::class, 'view_district'])->name('view-district-complaint');
+// Route::get('/close/{id}', [ComplaintController::class, 'edit'])->name('close');
+Route::post('/update-complaint', [ComplaintController::class, 'update'])->name('update-complaint');
+Route::any('/send-otp', [ComplaintController::class, 'sendOTP'])->name('send-otp');
+
+// ComplaintController 
+
+// UserController
+Route::get('/add-user', [UserController::class, 'index'])->name('add-user');
+Route::post('/save-user', [UserController::class, 'create'])->name('save-user');
+Route::get('/view-user', [UserController::class, 'view_user'])->name('view-user');
+Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
+Route::post('/update-user', [UserController::class, 'update'])->name('update-user');
+Route::get('/delete/{id}', [UserController::class, 'destroy'])->name('delete');
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+
+// UserController
+
+// LoginController
+Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+// LoginController
+
+
+    //    });
+   
+// LoginController 
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::match(['get', 'post'],'/loginuser',[LoginController::class,'loginuser'])->name('loginuser');
+// LoginController 
+
