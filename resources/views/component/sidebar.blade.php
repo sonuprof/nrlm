@@ -93,7 +93,30 @@
               </ul>
             </li>
 
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon far fa-user"></i>
+                <p>
+                  Site Details
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{route('add-site')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Add Site</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{route('view-site')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>View Sites</p>
+                  </a>
+                </li>
 
+              </ul>
+            </li>
 
 
             <li class="nav-item">
@@ -132,6 +155,9 @@
 
               </ul>
             </li>
+
+            
+            
             <li class="nav-item">
               <a href="{{route('logout')}}" class="nav-link ">
                 <i class="nav-icon fas fa-power-off"></i>

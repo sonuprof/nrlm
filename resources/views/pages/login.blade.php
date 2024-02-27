@@ -35,11 +35,11 @@
               <h2 class="text-center" style="font-weight: bold; "><i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 User
                 Login</h2>
-              <form>
-
+                <form action="{{route('loginuser')}}" method="POST">
+							@csrf
                 <div class="p-3"
                   style="position: relative; margin-top: 30px; box-shadow: 2px 2px 4px grey; border-radius: 50px; background-color: white; ">
-                  <input type="text" placeholder="Enter E-mail"
+                  <input type="text" placeholder="Enter E-mail" name="email"
                     style="width: calc(100% - 40px); padding-left: 40px; border: none; outline: none;">
                   <i class="fa fa-envelope" aria-hidden="true"
                     style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 20px; margin-left: 10px;"></i>
@@ -47,7 +47,7 @@
 
                 <div class="p-3"
                   style="position: relative; margin-top: 30px; box-shadow: 2px 2px 4px grey; border-radius: 50px; background-color: white; ">
-                  <input type="password" placeholder="Enter password"
+                  <input type="password" placeholder="Enter password" name="password"
                     style="width: calc(100% - 40px); padding-left: 40px; border: none; outline: none;">
                   <i class="fa fa-lock" aria-hidden="true"
                     style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); font-size: 20px; margin-left: 10px;"></i>

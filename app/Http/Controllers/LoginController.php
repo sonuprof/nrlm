@@ -16,9 +16,7 @@ class LoginController extends Controller
    }
    
    
-   public function help(Request $request){
-    return view('pages.help');
-   }
+ 
 
 
 

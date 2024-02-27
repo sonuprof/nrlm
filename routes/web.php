@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\SiteController;
 
 
 /*
@@ -56,7 +57,13 @@ Route::get('/delete/{id}', [UserController::class, 'destroy'])->name('delete');
 Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
 // UserController
-
+// SiteController
+Route::get('/add-site', [SiteController::class, 'index'])->name('add-site');
+Route::post('/save-site', [SiteController::class, 'create'])->name('save-site');
+Route::get('/view-site', [SiteController::class, 'view_site'])->name('view-site');
+Route::get('/edit/{id}', [SiteController::class, 'edit'])->name('edit');
+Route::post('/update-site', [SiteController::class, 'update'])->name('update-site');
+Route::get('/delete/{id}', [SiteController::class, 'destroy'])->name('delete');
 // LoginController
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 // LoginController
