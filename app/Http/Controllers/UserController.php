@@ -15,11 +15,7 @@ class UserController extends Controller
     {
         return view('user.add-user');
     }
-    public function dashboard()
-    {
-        return view('pages.dashboard');
-    }
-
+  
     public function view_user(Request $request)
     {
          $data['user'] = DB::table('users')->paginate(30);
